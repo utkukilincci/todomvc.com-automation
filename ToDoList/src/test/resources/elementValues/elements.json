@@ -1,0 +1,22 @@
+[
+  {
+    "key": "yapilacaklarListesi",
+    "value": "todo-list",
+    "type": "className"
+  },
+  {
+    "key": "yapilacakIsGirisKutusu",
+    "value": "new-todo",
+    "type": "className"
+  },
+  {
+    "key": "radioButon",
+    "value": "toggle",
+    "type": "className"
+  },
+  {
+    "key": "silmeButonu",
+    "value": "destroy",
+    "type": "className"
+  }
+]

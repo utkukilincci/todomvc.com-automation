@@ -1,0 +1,66 @@
+#Listenin bos oldugunu kontrol et
+*"1" saniye bekle
+*"yapilacaklarListesi" element listesi var mi
+*"yapilacaklarListesi" element listesi bos mu
+
+#Yapilacaklar listesine <text> ekle
+*"1" saniye bekle
+*"yapilacakIsGirisKutusu" element listesi var mi
+*"yapilacakIsGirisKutusu" elementine <text> degerini gir
+*"yapilacakIsGirisKutusu" elementinde enter tusla
+
+#Yapilacaklar listesinde <text> var mi
+*"1" saniye bekle
+*"yapilacaklarListesi" element listesi var mi
+*"yapilacaklarListesi" element listesi dolu mu
+*"yapilacaklarListesi" elementinde <text> var mi
+
+#Yapilacaklar listesinde <text> iteminin oldugundan emin ol
+*"1" saniye bekle
+*"yapilacaklarListesi" element listesi var mi
+*"yapilacaklarListesi" element listesinde <text> yoksa "yapilacakIsGirisKutusu" elementine ekle
+
+#Yapilacaklar listesinde <text1> itemi <text2> iteminin altinda mi
+*"1" saniye bekle
+*"yapilacaklarListesi" element listesi var mi
+*"yapilacaklarListesi" elementinde <text1> var mi
+*"yapilacaklarListesi" elementinde <text2> var mi
+*"yapilacaklarListesi" 'nde <text1> elementi <text2> elementinin altinda mi
+
+#Yapilacaklar listesinde <text1> ve <text2> iteminin oldugundan emin ol
+*"1" saniye bekle
+*"yapilacaklarListesi" element listesi var mi
+*"yapilacaklarListesi" element listesinde <text1> yoksa "yapilacakIsGirisKutusu" elementine ekle
+*"yapilacaklarListesi" element listesinde <text2> yoksa "yapilacakIsGirisKutusu" elementine ekle
+
+#Listedeki <text> iteminin radio butonuna tikla
+*"1" saniye bekle
+*"yapilacaklarListesi" elementinde <text> var mi
+*"yapilacaklarListesi" listesindeki <text> iteminin "radioButon" elementine tikla
+
+#Listedeki <text> itemi isaretlendi mi
+*"1" saniye bekle
+*"yapilacaklarListesi" elementinde <text> var mi
+*"yapilacaklarListesi" listesindeki <text> isaretli mi
+
+#Yapilacaklar listesinde <text> iteminin isaretli oldugundan emin ol
+*"1" saniye bekle
+*"yapilacaklarListesi" element listesinde <text> yoksa "yapilacakIsGirisKutusu" elementine ekle
+*"yapilacaklarListesi" listesindeki <text> isaretli degilse "radioButon" isaretle
+
+#Listedeki <text> itemi isaretsiz mi
+*"1" saniye bekle
+*"yapilacaklarListesi" elementinde <text> var mi
+*"yapilacaklarListesi" listesindeki <text> isaretsiz mi
+
+#Listedeki <text> iteminin silme butonuna tikla
+*"1" saniye bekle
+*"yapilacaklarListesi" elementinde <text> var mi
+*"1" saniye bekle
+*"yapilacaklarListesi" listesindeki <text> iteminin "silmeButonu" elementine tikla
+
+#Yapilacaklar listesinde <text> silindi mi
+*"1" saniye bekle
+*"yapilacaklarListesi" element listesi var mi
+*"yapilacaklarListesi" element listesi dolu mu
+*"yapilacaklarListesi" elementinde <text> silindi mi
