@@ -1,7 +1,9 @@
 package base;
 
 import com.thoughtworks.gauge.AfterScenario;
+import com.thoughtworks.gauge.AfterSuite;
 import com.thoughtworks.gauge.BeforeScenario;
+import com.thoughtworks.gauge.BeforeSuite;
 import helper.ElementHelper;
 import helper.StoreHelper;
 import model.ElementInfo;
@@ -16,7 +18,6 @@ import java.util.List;
 public class BaseTest {
 
     public static WebDriver driver;
-    static int deffaultListSize = 0;
 
     @BeforeScenario
     public void setup(){
@@ -51,11 +52,7 @@ public class BaseTest {
     }
 
     public void isElementsListEmpty(String key){
-        WebElement fullList = findElement(key);
-        List<WebElement> ulFullList = fullList.findElements(By.tagName("li"));
-        int listSize = ulFullList.size();
-        int expectedEmptyListSize = 0;
-        Assert.assertEquals(expectedEmptyListSize,listSize);
+        findElements(key).isEmpty();
     }
 
     public void sendText(String key, String text){
@@ -67,13 +64,9 @@ public class BaseTest {
     }
 
     public void isElementListFull(String key){
-        WebElement fullList = findElement(key);
-        List<WebElement> ulFullList = fullList.findElements(By.tagName("li"));
-        int listSize = ulFullList.size();
-        if(listSize > deffaultListSize){
-            Assert.assertNotEquals(deffaultListSize,listSize);
-        }else {
-            Assert.assertNotEquals(deffaultListSize,listSize);
+        List<WebElement> ulFullList = findElements(key);
+        if(ulFullList.isEmpty()){
+            Assert.assertFalse(ulFullList.isEmpty());
         }
     }
 
@@ -89,8 +82,7 @@ public class BaseTest {
 
     public void checkAndAddToList(String key, String text, String keytwo){
         List<WebElement> list = findElements(key);
-        int listSize = list.size();
-        if (listSize > deffaultListSize){
+        if (list.isEmpty() != true){
            List<String> listTexts = forListElements(key);
            boolean result = listTexts.contains(text);
            if(result == false){
@@ -111,8 +103,7 @@ public class BaseTest {
     }
 
     public void clickTheItemAttirbute(String key, String text, String keytwo){
-        WebElement toDoList = findElement(key);
-        List<WebElement> ulToDoList = toDoList.findElements(By.tagName("li"));
+        List<WebElement> ulToDoList = findElements(key);
         List<String> list = forListElements(key);
         int index = list.indexOf(text);
         WebElement element = ulToDoList.get(index).findElement(findElementBy(keytwo));
@@ -125,8 +116,7 @@ public class BaseTest {
     }
 
     public boolean isClickedRadioButton(String key, String text){
-        WebElement toDoList = findElement(key);
-        List<WebElement> ulToDoList = toDoList.findElements(By.tagName("li"));
+        List<WebElement> ulToDoList = findElements(key);
         List<String> list = forListElements(key);
         int index = list.indexOf(text);
         String isChecked = ulToDoList.get(index).getAttribute("class");
@@ -135,15 +125,13 @@ public class BaseTest {
     }
 
     public void checkAndClickTheRadioButton(String key, String text, String keytwo){
-        boolean check = false;
-        if (isClickedRadioButton(key,text) == check){
+        if (isClickedRadioButton(key,text) == false){
             clickTheItemAttirbute(key, text, keytwo);
         }
     }
 
     public boolean isNotClickedTheRadioButton(String key, String text){
-        WebElement toDoList = findElement(key);
-        List<WebElement> ulToDoList = toDoList.findElements(By.tagName("li"));
+        List<WebElement> ulToDoList = findElements(key);
         List<String> list = forListElements(key);
         int index = list.indexOf(text);
         String isChecked = ulToDoList.get(index).getAttribute("class");
@@ -152,8 +140,7 @@ public class BaseTest {
     }
 
     public List<String> forListElements(String key){
-        WebElement toDoList = findElement(key);
-        List<WebElement> ulToDoList = toDoList.findElements(By.tagName("li"));
+        List<WebElement> ulToDoList = findElements(key);
         List<String> list = new ArrayList<>();
         for(WebElement i : ulToDoList){
             list.add(i.getText());
